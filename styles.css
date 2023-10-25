@@ -1,0 +1,379 @@
+/*
+Author: Francine Price
+Date: October 24, 2023
+File Name: styles.css
+*/
+
+body {
+    margin: 0 auto;
+}
+
+/* Styles rules for Header section */
+nav {
+    height: 140px;
+    background-color: #D9E8F1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px 0 80px;
+}
+
+nav ul.desktop-menu {
+    display: flex;
+    list-style: none;
+}
+
+nav ul.desktop-menu li {
+    margin: 0px 5px;
+    padding: 10px 12px;
+}
+
+nav ul.desktop-menu li a {
+    color: rgb(15, 56, 66);
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+}
+
+nav a:after {
+    content: '';
+    position: absolute;
+    background-color: rgb(27, 128, 128);
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: rgb(27, 128, 128);
+}
+
+nav a:hover:after {
+    width: 100%;
+}
+
+nav .menubar i {
+    color: rgb(27, 128, 128);
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+}
+
+#click {
+    display: none;
+}
+
+/* Styles rules for Main section */
+.homepage {
+    background-image: url(../images/beachBackground.jpg);
+    background-size: cover;
+    background-position: right;
+    height: 650px;
+    margin: 0;
+}
+
+.welcome h1 {
+    color: white;
+    font-family: 'Alex Brush', cursive;
+    font-size: 90px;
+    padding-left: 80px;
+    padding-top: 80px;
+    margin: 0;
+}
+
+/* Styles rules for About page */
+.about {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 25px;
+    margin: 0 270px;
+    padding: 20px;
+}
+
+.title {
+    font-family: 'Alex Brush', cursive;
+    color:  rgb(27, 128, 128);
+    grid-column: 1 / span 2;
+    font-size: 60px;
+    padding-top: 25px;
+    text-align: center;
+    padding-bottom: 25px;
+    margin: 0;
+}
+
+.caption {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+    line-height: 1.6; 
+}
+
+.caption p {
+    flex: 1;
+    margin: 0;
+}
+
+.image {
+    margin-left: 10px;
+}
+
+.image img {
+    max-width: 400px;
+    height: auto;
+}
+/* Style rules for Things To Do page*/
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px; /* Adjust the gap as needed */
+    margin: 0 40px;
+}
+
+.ttd {
+    text-align: center;
+    color:  rgb(27, 128, 128);
+    text-transform: uppercase;
+}
+
+/* Style the image items */
+.image-item {
+    text-align: left;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Style the images */
+.image-item img {
+    max-width: 100%;
+}
+
+/* Style the captions */
+.caption {
+    margin-top: 10px;
+}
+
+/*Style rules for Food + Drink page*/
+.grid-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 10px;
+    margin: 40px 100px;
+}
+
+.imageFD {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imageFD img {
+    max-width: 100%;
+    height: auto;
+}
+
+.fdInfo {
+    display: inline-block;
+}
+
+.captionFD {
+    text-align: left;
+}
+
+.fdHeader {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.fdText {
+    margin: 10px 0;
+}
+
+.captionFD button {
+    padding: 10px 20px;
+    background-color: rgb(27, 128, 128);
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.captionFD button a {
+    color: white;
+    text-decoration: none;
+}
+
+  
+  /* Style for button hover effect */
+button:hover {
+    background-color: rgb(103, 199, 210);
+  }
+  
+
+/* Styles rules for Footer section */
+footer {
+    background-color: #D9E8F1;
+    text-align: center;
+    padding: 10px 0;
+    color: rgb(13, 95, 104);
+}
+
+footer h4 {
+    font-family: 'Rochester', cursive;
+    font-size: 20px;
+}
+
+.social-icon {
+    color: rgb(13, 95, 104);
+    transition: color 0.4s;
+    text-decoration: none;
+    margin: 0 10px;
+    height: 25px;
+    width: 25px;
+    font-size: 25px;
+}
+
+.social-icon:hover {
+    color: rgb(32, 153, 166);
+}
+
+@media (max-width: 940px) {
+    .logo {
+        z-index: 100;
+    }
+    
+    nav .menubar i {
+        display: block;
+    }
+
+    #click:checked ~ .menubar i::before {
+        content: "\f00d";
+    }
+
+    nav ul.desktop-menu {
+        display: none;
+    }
+
+    nav ul.mobile-menu {
+        position: fixed;
+        top: 100px;
+        left: -150%;
+        background-color: #D9E8F1;
+        height: 30vh;
+        width: 100%;
+        display: block;
+        text-align: center;
+        transition: all 0.7s ease;
+        list-style: none;
+    }
+
+    #click:checked ~ ul.mobile-menu {
+        left: 0;
+    }
+
+    nav ul.mobile-menu li {
+        margin: 20px 0;
+    }
+
+    nav ul.mobile-menu li a {
+        color: rgb(21, 69, 81);
+        font-size: 20px;
+        display: block;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    nav ul.mobile-menu li a:hover {
+        color: rgb(32, 153, 166);
+        text-decoration: none;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr; /* Set the grid to a single column layout */
+        grid-gap: 10px; 
+        padding: 20px;
+        margin: 0 25px;
+        justify-items: center; /* Align content to the left */
+    }
+
+    .content {
+        flex-direction: column; /* Stack content vertically */
+        align-items: center; /* Center content vertically */
+    }
+
+    .image {
+        margin-left: 0; 
+    }
+    /* Change the grid layout to a single column */
+    .image-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .image-item {
+        text-align: center;
+    }
+
+    /* Style captions to be below the images */
+    .content {
+        margin-top: 5px; 
+        text-align: left;
+    }
+
+    /* Style a heading on top of the image */
+    .ttd {
+        font-size: 1.2rem; 
+        margin-bottom: 10px; 
+    }
+    .grid-content {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(12, 1fr);
+    }
+    .grid-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        border: 1px solid #ddd;
+        background-color: #f9f9f9;
+        margin: 10px 0;
+    }
+    .imageFD {
+        margin-bottom: 0;
+    }
+
+    .fdHeader {
+        margin-top: 0;
+    }
+
+    footer {
+        padding: 10px 25px;
+    }
+      
+}
+
+@media (min-width: 941px) {
+    /* Styles for screens with a width greater than 940px (desktop view) */
+    nav .menubar i {
+        display: none;
+    }
+
+    nav ul.desktop-menu {
+        display: flex;
+    }
+
+    nav ul.mobile-menu {
+        display: none;
+    }
+}
